@@ -1,4 +1,4 @@
-.expense-item {
+.expense-item { /** 중복 코드 제거 */
     display: flex;
     justify-content: space-between;
     align-items: center;

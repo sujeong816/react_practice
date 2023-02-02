@@ -2,7 +2,7 @@ import "./ExpenseDate.css";
 
 export default function ExpenseDate(props) {
   const month = props.date.toLocaleString("en-US", { month: "long" });
-  const day = props.date.toLocaleString("en-US", { day: "2-digit" }); /**  2자리 */
+  const day = props.date.toLocaleString("en-US", { day: "2-digit" }); /** 2자리 */
   const year = props.date.getFullYear(); /** 4자리 */
 
   return (

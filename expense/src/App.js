@@ -1,6 +1,6 @@
 import Expenses from './component/Expense/Expenses';
 
-function App() {
+const App = () => { /** syntax 또 다른 함수 작성 방법 */
   const expenses = [
     {
       id: 'e1',

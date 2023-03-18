@@ -1,33 +1,36 @@
 import Expenses from "./component/Expense/Expenses";
 import NewExpense from "./component/NewExpense/NewExpense";
+import { useState } from "react";
 
-const App = () => {
-  /** syntax 또 다른 함수 작성 방법 */
-  const expenses = [
-    {
-      id: "e1",
-      title: "Toilet Paper",
-      amount: 94.12,
-      date: new Date(2023, 7, 14),
-    },
-    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2023, 2, 12) },
-    {
-      id: "e3",
-      title: "Car Insurance",
-      amount: 294.67,
-      date: new Date(2024, 2, 28),
-    },
-    {
-      id: "e4",
-      title: "New Desk (Wooden)",
-      amount: 450,
-      date: new Date(2024, 5, 12),
-    },
-  ];
+const DUMMY_EXPENSES = [ //기본 데이터
+  {
+    id: "e1",
+    title: "휴지",
+    amount: 23000,
+    date: new Date(2023, 7, 14),
+  },
+  { id: "e2", title: "프론트엔드 책", amount: 13000, date: new Date(2023, 2, 12) },
+  {
+    id: "e3",
+    title: "콜드컵",
+    amount: 18500,
+    date: new Date(2024, 2, 28),
+  },
+  {
+    id: "e4",
+    title: "간이책상",
+    amount: 38000,
+    date: new Date(2024, 5, 12),
+  },
+];
+
+export default function App() {
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   function addExpenseHandler(expense) {
-    console.log("In App.js");
-    console.log(expense);
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    })
   }
 
   return (
@@ -37,5 +40,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;

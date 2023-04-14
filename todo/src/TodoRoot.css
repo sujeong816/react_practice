@@ -8,11 +8,11 @@
 .todoRoot h1 {
   margin: 0 0 20px 0;
 }
-.todoRoot input {
+.todoRoot div > input {
   padding: 6px;
-  width: 220px;
+  width: 280px;
 }
-.todoRoot button {
+.todoRoot div button {
   margin-left: 5px;
   padding: 3px 10px;
 }
@@ -27,4 +27,21 @@
 }
 .todoRoot thead {
   background-color: #eee;
+}
+.todoRoot td:nth-child(1) {
+  text-align: center;
+  width: 30px;
+}
+.todoRoot input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: gray;
+}
+.todoRoot span {
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
+}
+.todoRoot tr.done {
+  color: #bbb;
+  text-decoration: line-through;
 }

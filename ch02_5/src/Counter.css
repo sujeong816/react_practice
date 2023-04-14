@@ -1,0 +1,10 @@
+.Counter {
+  padding: 20px;
+}
+.Counter button {
+  padding: 0.5em 1.5em;
+  margin-right: 1em;
+}
+.Counter input {
+  padding: 0.4em;
+}

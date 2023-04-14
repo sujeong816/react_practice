@@ -1,0 +1,35 @@
+div#app {
+  margin: 20px auto;
+  padding: 20px;
+  width: 300px;
+  border: 1px solid gray;
+  box-shadow: 5px 5px 5px #aaa;
+  font-size: 10pt;
+}
+h1 {
+  font-size: 15pt;
+}
+div.control {
+  margin-bottom: 1em;
+}
+input {
+  padding: 0.3em;
+}
+select {
+  padding: 0.3em;
+}
+hr {
+  margin: 2em 0;
+}
+
+div.box {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+}
+button {
+  display: block;
+  padding: 0.2em 2em;
+  margin: 0.5em;
+}

@@ -1,0 +1,8 @@
+table.MyTable {
+  border-collapse: collapse;
+  margin: 5px;
+}
+table.MyTable td {
+  border: 1px solid gray;
+  padding: 4px;
+}

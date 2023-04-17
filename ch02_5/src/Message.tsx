@@ -1,15 +1,15 @@
 import { ChangeEvent, useState } from "react";
-import { SetMessageFunc } from "./types";
+import { DispatchFunc } from "./myReducer";
 
 type Props = {
   message: string;
-  setMessage: SetMessageFunc;
+  dispatch: DispatchFunc;
 };
 
-export default function Message({ message, setMessage }: Props) {
+export default function Message({ message, dispatch }: Props) {
   const [msg, setMsg] = useState(message);
   const onChange = (e: ChangeEvent<HTMLInputElement>) => setMsg(e.target.value);
-  const onClick = () => setMessage(msg);
+  const onClick = () => dispatch({type:'setMessage', payload:{message: msg}});
 
   return (
     <div>

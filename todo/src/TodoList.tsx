@@ -1,21 +1,15 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-import type * as types from "./types";
+import { DispatchFunc, Todo } from "./todoReducer";
 
 type Props = {
-  todoList: types.Todo[];
-  toggleTodo: types.ToogleTodoFunc;
-  deleteTodo: types.DeleteTodoFunc;
-};
+  todoList: Todo[];
+  dispatch: DispatchFunc
+}
 
-export default function TodoList({ todoList }: Props) {
+export default function TodoList({ todoList, dispatch }: Props) {
   const trlist = todoList.map((todo) => (
-    <TodoItem
-      todo={todo}
-      key={todo.id}
-      toggleTodo={toggleTodo}
-      deleteTodo={deleteTodo}
-    />
+    <TodoItem key={todo.id} todo={todo} dispatch={dispatch} />
   ));
 
   return (

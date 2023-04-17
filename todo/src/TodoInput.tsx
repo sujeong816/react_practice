@@ -1,14 +1,17 @@
 import { ChangeEvent, useState } from 'react'
-import type * as types from './types'
+import { DispatchFunc } from './todoReducer'
 
 type Props = {
-    addTodo: types.AddTodoFunc
+    dispatch: DispatchFunc
 }
 
-export default function TodoInput({addTodo}: Props) {
+export default function TodoInput({dispatch}: Props) {
     const [title, setTitle] = useState<string>('')
     const onChange = (e: ChangeEvent<HTMLInputElement>)=>setTitle(e.target.value)
-    const onClick = () => {addTodo(title); setTitle('')}
+    const onClick = () => {
+        dispatch({type:'addTodo',payload:{title}})
+        setTitle('')
+    }
 
     return (
         <div>

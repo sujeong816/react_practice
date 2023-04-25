@@ -1,0 +1,15 @@
+h1 {
+  font-size: 11pt;
+  margin: 0;
+}
+div.box {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+}
+button {
+  display: block;
+  padding: 0.2em 2em;
+  margin: 0.5em;
+}

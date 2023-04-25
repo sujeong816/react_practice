@@ -18,6 +18,7 @@ export default function TodoList({ todoList, dispatch }: Props) {
         <tr>
           <td>id</td>
           <td>할 일</td>
+          <td>완료</td>
         </tr>
       </thead>
       <tbody>{trlist}</tbody>

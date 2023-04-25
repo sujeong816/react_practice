@@ -1,0 +1,48 @@
+.studentRoot {
+  border: 1px solid gray;
+  width: 400px;
+  margin: 10px auto;
+  box-shadow: 5px 5px 5px #ddd;
+  padding: 30px;
+}
+.studentRoot h1 {
+  margin: 0 0 20px 0;
+}
+.studentRoot div > input {
+  padding: 6px;
+  width: 280px;
+}
+.studentRoot div button {
+  margin-left: 5px;
+  padding: 3px 10px;
+}
+.studentRoot table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  width: 100%;
+}
+.studentRoot td {
+  border: 1px solid gray;
+  padding: 6px;
+}
+.studentRoot thead {
+  background-color: #eee;
+  text-align: center;
+}
+.studentRoot td:nth-child(1) {
+  text-align: center;
+  width: 30px;
+}
+.studentRoot input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: gray;
+}
+.studentRoot span {
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
+}
+.studentRoot tr.done {
+  color: #bbb;
+  text-decoration: line-through;
+}

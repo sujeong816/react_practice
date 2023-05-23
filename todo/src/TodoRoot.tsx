@@ -1,10 +1,11 @@
 import "./TodoRoot.css";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
-import { useReducer } from "react";
-import { initialState, reducer } from "./todoReducer";
+import React, { useReducer } from "react";
+import { reducer, initialState} from './todoReducer'
 
-export default function TodoRoot() {
+function TodoRoot() {
+  console.log('TodoRoot')
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <div className="todoRoot">
@@ -14,3 +15,4 @@ export default function TodoRoot() {
     </div>
   );
 }
+export default React.memo(TodoRoot)

@@ -1,15 +1,16 @@
-import { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import { DispatchFunc } from './todoReducer'
 
 type Props = {
     dispatch: DispatchFunc
 }
 
-export default function TodoInput({dispatch}: Props) {
+function TodoInput({dispatch}: Props) {
+    console.log('TodoInput')
     const [title, setTitle] = useState<string>('')
     const onChange = (e: ChangeEvent<HTMLInputElement>)=>setTitle(e.target.value)
-    const onClick = () => {
-        dispatch({type:'addTodo',payload:{title}})
+    const onClick = () => { 
+        dispatch({type: "addTodo", payload: {title}})
         setTitle('')
     }
 
@@ -20,3 +21,4 @@ export default function TodoInput({dispatch}: Props) {
         </div>
     )
 }
+export default React.memo(TodoInput)

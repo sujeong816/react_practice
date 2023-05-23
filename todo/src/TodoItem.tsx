@@ -1,17 +1,18 @@
 import React from "react";
-import { DispatchFunc, Todo } from "./todoReducer";
+import type { Todo, DispatchFunc } from "./todoReducer";
 
 type Props = {
   todo: Todo;
-  dispatch: DispatchFunc;
+  dispatch: DispatchFunc
 };
 
-export default function TodoItem({ todo, dispatch }: Props) {
-  const onChange = () =>
-    dispatch({ type: "toggleTodo", payload: { id: todo.id } });
+function TodoItem({ todo, dispatch }: Props) {
+  console.log("TodoItem", todo.id)
+  const onChange = () => dispatch({ type: "toggleTodo", payload: { id: todo.id } })
+  
   const onClick = () => {
     if (window.confirm("삭제하시겠습니까?"))
-      dispatch({ type: "deleteTodo", payload: { id: todo.id } });
+      dispatch({type: "deleteTodo", payload: {id: todo.id}})
   };
   return (
     <tr className={todo.done ? "done" : ""}>
@@ -24,3 +25,4 @@ export default function TodoItem({ todo, dispatch }: Props) {
     </tr>
   );
 }
+export default React.memo(TodoItem)

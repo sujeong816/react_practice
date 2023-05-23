@@ -1,13 +1,14 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-import { DispatchFunc, Todo } from "./todoReducer";
+import type { Todo, DispatchFunc } from "./todoReducer";
 
 type Props = {
-  todoList: Todo[];
+  todoList: Todo[]; 
   dispatch: DispatchFunc
 }
 
-export default function TodoList({ todoList, dispatch }: Props) {
+function TodoList({ todoList, dispatch }: Props) {
+  console.log('TodoList')
   const trlist = todoList.map((todo) => (
     <TodoItem key={todo.id} todo={todo} dispatch={dispatch} />
   ));
@@ -25,3 +26,4 @@ export default function TodoList({ todoList, dispatch }: Props) {
     </table>
   );
 }
+export default React.memo(TodoList)

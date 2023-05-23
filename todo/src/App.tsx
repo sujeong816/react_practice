@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
 import TodoRoot from './TodoRoot';
 
 function App() {
+  console.log("App")
   return (
    <TodoRoot /> 
   )
 }
 
-export default App;
+export default React.memo(App);

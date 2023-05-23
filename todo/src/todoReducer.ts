@@ -13,7 +13,6 @@ export const initialState = {
     { id: 3, title: "웹프 시험공부", done: false },
   ],
 };
-let lastId = 3;
 
 export type Action =
   | { type: "addTodo"; payload: { title: string } }
@@ -25,26 +24,18 @@ export type DispatchFunc = (action: Action) => void;
 export type ReducerFunc = (state: State, action: Action) => State;
 
 export const reducer: ReducerFunc = (state: State, action: Action) => {
+  const todoList = state.todoList
   switch (action.type) {
     case "addTodo":
-      return {
-        todoList: [
-          ...state.todoList,
-          { id: lastId+1, title: action.payload.title, done: false },
-        ],
-      };
+      return { todoList: [...todoList, 
+          { id: todoList[todoList.length-1].id + 1,
+            title: action.payload.title, done: false}]};
     case "deleteTodo":
-      return {
-        todoList: state.todoList.filter(
-          (todo) => todo.id !== action.payload.id
-        ),
-      };
+      return { todoList: todoList.filter(
+          todo => todo.id !== action.payload.id)};
     case "toggleTodo":
-      return {
-        todoList: state.todoList.map((todo) =>
-          todo.id !== action.payload.id ? todo : { ...todo, done: !todo.done }
-        ),
-      };
+      return { todoList: todoList.map(
+          todo => todo.id !== action.payload.id ? todo : {...todo, done: !todo.done})};
     default:
         throw new Error("unknown action type")
   }

@@ -1,0 +1,47 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "콜라",
+      "category": "음료",
+      "price": 1000,
+      "quantity": 5,
+      "available": "on",
+      "timestamp": 1684900596621
+    },
+    {
+      "id": 2,
+      "title": "우유",
+      "category": "음료",
+      "price": 1500,
+      "quantity": 8,
+      "available": false
+    },
+    {
+      "id": 3,
+      "title": "조리퐁",
+      "category": "과자",
+      "price": "1200",
+      "quantity": 15,
+      "available": "on",
+      "timestamp": 1684900601397
+    },
+    {
+      "id": 4,
+      "title": "초코파이",
+      "category": "빵",
+      "price": 8000,
+      "quantity": 3,
+      "available": false
+    },
+    {
+      "id": 5,
+      "title": "바나나킥",
+      "category": "과자",
+      "price": "8000",
+      "quantity": "8",
+      "available": "유효",
+      "timestamp": 0
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 import React from 'react' 
 import { useNavigate } from 'react-router-dom' 
 import styled from 'styled-components'
-import StudentItem from './StudentItem' 
-import type { Student } from './studentReducer' 
+import BookItem from './BookItem' 
+import type { Book } from './bookReducer' 
 
 const Div = styled.div` 
     & > button { padding: 0.2em 1.5em; font-size: 11pt; 
@@ -13,12 +13,12 @@ const Div = styled.div`
     & td:nth-child(1) { text-align: center; width: 30px; } 
     & tr:hover { background-color: #ffe; cursor: pointer; } ` 
     
-type Props = { students: Student[] } 
+type Props = { books: Book[] } 
 
-const StudentList = React.memo(({ students }: Props) => { 
+const BookList = React.memo(({ books }: Props) => { 
     const navigate = useNavigate() 
-    const trlist = students.map(student => 
-        <StudentItem key={student.id} student={student} />)
+    const trlist = books.map(book => 
+        <BookItem key={book.id} book={book} />)
         
     const onCreate = () => navigate('/edit/0')
     
@@ -30,12 +30,10 @@ const StudentList = React.memo(({ students }: Props) => {
                 <thead> 
                     <tr>
                         <td>id</td>
-                        <td>학번</td>
-                        <td>이름</td>
-                        <td>이메일</td> 
-                        <td>전화</td>
-                        <td>성별</td>
-                        <td>학과</td> 
+                        <td>제목</td>
+                        <td>저자</td>
+                        <td>가격</td> 
+                        <td>카테고리</td>
                     </tr> 
                 </thead> 
                 <tbody> {trlist} </tbody> 
@@ -44,4 +42,4 @@ const StudentList = React.memo(({ students }: Props) => {
     ) 
 }) 
 
-export default StudentList
+export default BookList

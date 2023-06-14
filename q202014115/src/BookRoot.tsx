@@ -1,10 +1,10 @@
 import React, { useReducer, useEffect } from 'react' 
 import { BrowserRouter, Routes, Route } from 'react-router-dom' 
 import styled from 'styled-components'
-import StudentEdit from './StudentEdit'
-import StudentList from './StudentList'
-import { reducer, initialState } from './studentReducer'
-import { reloadStudents } from './studentService'
+import BookEdit from './BooksEdit'
+import BookList from './BookList'
+import { reducer, initialState } from './bookReducer'
+import { reloadBooks } from './bookService'
 
 const Div = styled.div` 
     border: 1px solid gray; width: 800px; margin: 0 auto; 
@@ -13,17 +13,17 @@ const Div = styled.div`
         padding: 10px 20px; border-radius: 10px; background-color: #fee; } 
     & #error span { float: right; font-weight: bold; cursor: pointer; } ` 
     
-const StudentRoot = React.memo(() => { 
+const BookRoot = React.memo(() => { 
     const [state, dispatch] = useReducer(reducer, initialState) 
-    useEffect(() => { reloadStudents(dispatch); }, []) // 마운트 될 때, 학생 목록을 조회한다 
+    useEffect(() => { reloadBooks(dispatch); }, []) // 마운트 될 때, 책 목록을 조회한다 
     const clearErr = () => dispatch({type: 'setErrorMsg', payload: { errorMsg: "" }})
     
     return ( 
         <Div> 
             <BrowserRouter> 
                 <Routes> 
-                    <Route path="/" element={<StudentList students={state.students} />} /> 
-                    <Route path="/edit/:id" element={<StudentEdit dispatch={dispatch} />} /> 
+                    <Route path="/" element={<BookList books={state.books} />} /> 
+                    <Route path="/edit/:id" element={<BookEdit dispatch={dispatch} />} /> 
                 </Routes> 
             </BrowserRouter> 
             { state.errorMsg && <div id="error">{state.errorMsg} 
@@ -31,4 +31,4 @@ const StudentRoot = React.memo(() => {
         </Div> 
     ) 
 }) 
-export default StudentRoot;
+export default BookRoot;

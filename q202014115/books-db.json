@@ -1,0 +1,57 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "죄와벌",
+      "author": "도스토예프스키",
+      "price": 10000,
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "title": "레미제라블",
+      "author": "빅토르 위고",
+      "price": 11000,
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "title": "경제학 개론",
+      "author": "홍길동",
+      "price": 15000,
+      "categoryId": 2
+    },
+    {
+      "id": 4,
+      "title": "동양문화사",
+      "author": "임꺽정",
+      "price": 13000,
+      "categoryId": 3
+    },
+    {
+      "id": 5,
+      "title": "천문학개론",
+      "author": "이몽룡",
+      "price": 14000,
+      "categoryId": 4
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "소설"
+    },
+    {
+      "id": 2,
+      "title": "경제"
+    },
+    {
+      "id": 3,
+      "title": "역사"
+    },
+    {
+      "id": 4,
+      "title": "과학"
+    }
+  ]
+}

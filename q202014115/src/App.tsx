@@ -1,9 +1,9 @@
-import StudentRoot from "./StudentRoot";
+import BookRoot from "./BookRoot";
 
 export default function App() {
   return (
     <div>
-      <StudentRoot />
+      <BookRoot />
     </div>
   )
 }

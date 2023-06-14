@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "우유",
+      "price": 1000,
+      "category": "음료수"
+    },
+    {
+      "id": 2,
+      "title": "조리퐁",
+      "price": 200,
+      "category": "과자"
+    },
+    {
+      "id": 3,
+      "title": "맥주",
+      "price": 300,
+      "category": "주류"
+    },
+    {
+      "id": 4,
+      "title": "환타",
+      "price": 700,
+      "category": "음료수"
+    }
+  ]
+}

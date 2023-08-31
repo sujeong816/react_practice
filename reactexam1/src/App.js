@@ -24,7 +24,7 @@ function App() {
       <MyHeader />
       <h2 style={style.h2}>안녕 리액트 {name}</h2>
       <b style={style.bold_text} id="bold_text">
-        {number}는 {number%2==0 ? "짝수" : "홀수"}이다.
+        {number}는 {number%2===0 ? "짝수" : "홀수"}이다.
       </b>
       <MyFooter />
     </div>
